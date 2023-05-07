@@ -1,7 +1,8 @@
 --This script is not patched (yet) (For educational purposes)
 
 
-______________________________________________________________________________________________
+(
+
 function lord() {
 let socket = new WebSocket("wss://rblxwild.com/socket.io/?EIO=4&transport=websocket");
 authtoken = "Your Auth Code"
@@ -17,8 +18,7 @@ socket.onmessage = function(event) {
 if (!(event.data.includes("syncResponse"))) console.log(event.data)
     if (event.data.startsWith("0")) {
         socket.send("40")
-    }
-    if (event.data.startsWith("40")) {
+    } if (event.data.startsWith("40")) {
         socket.send(`42["authentication",{"authToken":"${authtoken}","clientTime":${Date.now()}}]`)
         setTimeout(() => {
             function keepalive() {
@@ -30,8 +30,7 @@ if (!(event.data.includes("syncResponse"))) console.log(event.data)
             keepalive()
         }, 3000);
     }
-    
-_____________________________________________________________________________________________________
+   
 
     if (event.data.startsWith(`42["authenticationResponse"`)) {
         socket.send(`42["casebattles:subscribe"]`)
@@ -73,3 +72,5 @@ socket.onerror = function(error) {
 };
 }
 lord()
+
+)
