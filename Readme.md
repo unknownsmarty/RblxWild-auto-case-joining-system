@@ -1,12 +1,11 @@
 --This script is not patched (yet) (For educational purposes)
-Do not copy this line Or there is any above!
 
 
+______________________________________________________________________________________________
 function lord() {
 let socket = new WebSocket("wss://rblxwild.com/socket.io/?EIO=4&transport=websocket");
 authtoken = "Your Auth Code"
 socket.onopen = function(e) {
-
 
 };
 var request = new XMLHttpRequest;
@@ -32,7 +31,7 @@ if (!(event.data.includes("syncResponse"))) console.log(event.data)
         }, 3000);
     }
     
-
+_____________________________________________________________________________________________________
 
     if (event.data.startsWith(`42["authenticationResponse"`)) {
         socket.send(`42["casebattles:subscribe"]`)
