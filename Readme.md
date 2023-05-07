@@ -1,5 +1,5 @@
 --This script is not patched (yet) (For educational purposes)
-Do not copy this line and above!!!
+Do not copy this line Or there is any above!
 
 
 function lord() {
